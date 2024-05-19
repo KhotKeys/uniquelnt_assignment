@@ -1,29 +1,29 @@
-def integers_file(file_name):
+def read_integers_from_file(file_name):
     try:
         with open(file_name, 'r') as file_object:
-            unique_integers_flow = file_object.readlines()
-            nique_integers_flow  = [int(line.strip()) for line in unique_integers_flow]
-        return nique_integers_flow
+            integers = [int(line.strip()) for line in file_object.readlines()]
+        return integers
     except Exception as e:
-        print(f"When there is an error in the file: {e}")
+        print(f"Error reading file: {e}")
         return []
 
 
-def get_unique_sorted_integers(integers):
-    unique_integers = list(set(integers))
-   
-    unique_integers.sort()
-   
-    return unique_integers
+def remove_duplicates_and_sort(integers):
+    return sorted(list(set(integers)))
 
-def main():
-    file_name = r'uniquelnt.txt' 
-    integers = integers_file(file_name)
-    
-    if integers:
-        unique_sorted_integers = get_unique_sorted_integers(integers)
-        for integer in unique_sorted_integers:
-            print(integer)
-            
+
+def print_integers(integers):
+    for integer in integers:
+        print(integer)
+
+
+def main_fuc():
+    file_name = r'uniquelnt.txt'
+    integers_list = read_integers_from_file(file_name)
+    if integers_list:
+        sorted_integers = remove_duplicates_and_sort(integers_list)
+        print_integers(sorted_integers)
+
+
 if __name__ == "__main__":
-    main()
+    main_fuc()
