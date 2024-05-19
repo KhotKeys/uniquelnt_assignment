@@ -15,7 +15,7 @@ Given a file containing a list of integers, the program should output a list of 
 5. Open a terminal or command prompt and navigate to the directory where the `wise_men_from_Africa.py` file is located.
 6. Run the program by executing the following command:
 
-// python wise_men_from_Africa
+// python wise_men_from_Africa.py
 
 
 7. The program will read the integers from the `uniqueInt.txt` file and output a list of unique and sorted integers to the console.
